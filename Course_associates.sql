@@ -1,8 +1,8 @@
 CREATE TABLE Course_Associates(
     tid INT,
-    cnum VARCHAR,
-    did VARCHAR,
-    type VARCHAR NOT NULL,
+    cnum VARCHAR(255),
+    did VARCHAR(255),
+    type VARCHAR(255) NOT NULL,
     PRIMARY KEY(did, cnum, tid),
     FOREIGN KEY (tid) REFERENCES Tracks(tid),
     FOREIGN KEY (cnum, did) REFERENCES Courses(cnum, did));

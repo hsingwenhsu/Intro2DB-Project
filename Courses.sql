@@ -1,8 +1,8 @@
 CREATE TABLE Courses(
-    cnum VARCHAR,
-    did VARCHAR,
+    cnum VARCHAR(255),
+    did VARCHAR(255),
     name VARCHAR(255) NOT NULL,
-    description VARCHAR(255),
+    description VARCHAR(1024),
     credits FLOAT CHECK(credits > 0),
     PRIMARY KEY(did, cnum),
     FOREIGN KEY (did) REFERENCES Departments(did));

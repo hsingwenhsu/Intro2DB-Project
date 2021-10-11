@@ -5,7 +5,7 @@ CREATE TABLE Sections(
     year INTEGER,
     semester VARCHAR(255),
     secid SERIAL UNIQUE NOT NULL,
-    description VARCHAR(255),
+    description VARCHAR(1024),
     iid INTEGER NOT NULL,
     PRIMARY KEY(did, cnum, year, semester, snum),
     FOREIGN KEY (cnum, did) REFERENCES Courses(cnum, did),
