@@ -1,0 +1,18 @@
+CREATE TABLE Departments(did VARCHAR, name VARCHAR CHECK(LEN(name) > 0), PRIMARY KEY(did))
+
+CREATE TABLE Courses(cnum VARCHAR, did VARCHAR, name VARCHAR CHECK(LEN(name) > 0), description VARCHAR, credits FLOAT CHECK (credits > 0), PRIMARY KEY(did, cnum), FOREIGN KEY (did) REFERENCES Departments(did))
+
+CREATE TABLE Tracks(tid VARCHAR, did VARCHAR NOT NULL, name VARCHAR CHECK(LEN(name) > 0), PRIMARY KEY(tid), FOREIGN KEY (did) REFERENCES Departments(did))
+
+CREATE TABLE Course_Associates(tid VARCHAR, cnum VARCHAR, did VARCHAR, type VARCHAR NOT NULL, PRIMARY KEY(did, cnum, tid), FOREIGN KEY (tid) REFERENCES Tracks(tid), FOREIGN KEY (cnum, did) REFERENCES Courses(cnum, did))
+
+CREATE TABLE Instructors(iid INTEGER, name VARCHAR CHECK(LEN(name) > 0), PRIMARY KEY(iid))
+
+CREATE TABLE Sections(snum INTEGER, did VARCHAR, cnum VARCHAR, year INTEGER, semester VARCHAR, secid INTEGER UNIQUE NOT NULL AUTO_INCREMENT, description VARCHAR, iid INTEGER NOT NULL, PRIMARY KEY(did, cnum, year, semester, snum), FOREIGN KEY (cnum, did) REFERENCES Courses(cnum, did), FOREIGN KEY (iid) REFERENCES Instructors(iid))
+
+CREATE TABLE Students(sid INTEGER, username VARCHAR NOT NULL UNIQUE CHECK(LEN(username) > 5), password NOT NULL, PRIMARY KEY(sid))
+
+CREATE TABLE Comments(cid INTEGER, sid INTEGER NOT NULL, secid INTEGER NOT NULL, text VARCHAR NOT NULL, date DATE NOT NULL, PRIMARY KEY (cid), FOREIGN KEY (sid) REFERENCES Students(sid), FOREIGN KEY (secid) REFERENCES Sections(secid))
+
+CREATE TABLE Enrollments (sid INTEGER, secid INTEGER, PRIMARY KEY (sid, secid), FOREIGN KEY (sid) REFERENCES Students(sid), FOREIGN KEY (secid) REFERENCES Sections(secid))
+
