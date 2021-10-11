@@ -1,6 +1,6 @@
 CREATE TABLE Departments (
-    did VARCHAR,
-    name VARCHAR CHECK(LEN(name) > 0), 
+    did VARCHAR(255),
+    name VARCHAR NOT NULL, 
     PRIMARY KEY(did));
 
 insert into Departments (did, name) values ('COMS', 'Computer');

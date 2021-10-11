@@ -1,6 +1,6 @@
 CREATE TABLE Instructors(
     iid INTEGER,
-    name VARCHAR CHECK(LEN(name) > 0),
+    name VARCHAR(255) NOT NULL,
     PRIMARY KEY(iid));
 
 insert into Instructors (iid, name) values (1, 'Donald F Ferguson');

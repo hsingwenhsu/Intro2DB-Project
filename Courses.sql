@@ -1,16 +1,16 @@
 CREATE TABLE Courses(
     cnum VARCHAR,
     did VARCHAR,
-    name VARCHAR CHECK(LEN(name) > 0),
-    description VARCHAR,
-    credits FLOAT CHECK (credits > 0),
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(255),
+    credits FLOAT CHECK(credits > 0),
     PRIMARY KEY(did, cnum),
     FOREIGN KEY (did) REFERENCES Departments(did));
 
 insert into Courses (cnum, did, name, credits)
 values ('E6156', 'COMS', 'CLOUD COMPUTING', 3);
 
-insert into Courses (cnum, did, name, description, credits)
+insert into Courses (cnum, did, name, description, credits) 
 values ('W4111', 'COMS', 'INTRODUCTION TO DATABASES', 3);
 
 insert into Courses (cnum, did, name, description, credits)

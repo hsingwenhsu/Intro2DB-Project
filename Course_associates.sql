@@ -1,14 +1,11 @@
 CREATE TABLE Course_Associates(
-    tid VARCHAR,
+    tid INT,
     cnum VARCHAR,
     did VARCHAR,
     type VARCHAR NOT NULL,
     PRIMARY KEY(did, cnum, tid),
     FOREIGN KEY (tid) REFERENCES Tracks(tid),
     FOREIGN KEY (cnum, did) REFERENCES Courses(cnum, did));
-
-insert into Course_Associates(tid, cnum, did, type) 
-values (, 'E6156', 'COMS', );
 
 insert into Course_Associates(tid, cnum, did, type) 
 values (1 , 'W4111', 'COMS', 'ELECTIVE');

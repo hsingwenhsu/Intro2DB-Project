@@ -1,7 +1,7 @@
 CREATE TABLE Tracks(
     tid INTEGER, 
-    did VARCHAR NOT NULL, 
-    name VARCHAR CHECK(LEN(name) > 0),
+    did VARCHAR(255) NOT NULL, 
+    name VARCHAR(255) NOT NULL,
     PRIMARY KEY(tid),
     FOREIGN KEY (did) REFERENCES Departments(did));
 
