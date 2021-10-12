@@ -6,7 +6,7 @@ CREATE TABLE Tracks(tid SERIAL, did VARCHAR(255) NOT NULL, name VARCHAR(255) NOT
 
 CREATE TABLE Course_Associates(tid INTEGER, cnum VARCHAR(255), did VARCHAR(255), type VARCHAR(255) NOT NULL, PRIMARY KEY(did, cnum, tid), FOREIGN KEY (tid) REFERENCES Tracks(tid), FOREIGN KEY (cnum, did) REFERENCES Courses(cnum, did));
 
-CREATE TABLE Instructors(iid SERIAL, name VARCHAR(255) NOT NULL, PRIMARY KEY(iid))
+CREATE TABLE Instructors(iid SERIAL, name VARCHAR(255) NOT NULL, PRIMARY KEY(iid));
 
 CREATE TABLE Sections(snum VARCHAR(255), did VARCHAR(255), cnum VARCHAR, year INTEGER, semester VARCHAR, secid SERIAL UNIQUE NOT NULL, description VARCHAR, iid INTEGER NOT NULL, time VARCHAR(255), location VARCHAR(255), PRIMARY KEY(did, cnum, year, semester, snum), FOREIGN KEY (cnum, did) REFERENCES Courses(cnum, did), FOREIGN KEY (iid) REFERENCES Instructors(iid));
 

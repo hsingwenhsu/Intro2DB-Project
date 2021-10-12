@@ -1,13 +1,3 @@
-CREATE TABLE Comments(
-    cid INTEGER,
-    sid INTEGER NOT NULL,
-    secid INTEGER NOT NULL,
-    text VARCHAR NOT NULL,
-    date DATE NOT NULL,
-    PRIMARY KEY (cid),
-    FOREIGN KEY (sid) REFERENCES Students(sid),
-    FOREIGN KEY (secid) REFERENCES Sections(secid));
-
 insert into Comments(cid, sid, secid, text, date)
 values (1, 1, 2, 'Great Class', '2021-09-20');
 

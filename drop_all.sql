@@ -1,0 +1,10 @@
+DROP TABLE Departments CASCADE;
+DROP TABLE Courses CASCADE;
+DROP TABLE Tracks CASCADE;
+DROP TABLE Course_Associates CASCADE;
+DROP TABLE Instructors CASCADE;
+DROP TABLE Sections CASCADE;
+DROP Table Students CASCADE;
+DROP Table Comments CASCADE;
+DROP Table Enrollments;
+

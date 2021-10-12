@@ -1,9 +1,3 @@
-CREATE TABLE Students(
-    sid INTEGER,
-    username VARCHAR(255) NOT NULL UNIQUE CHECK (char_length(username) > 5),
-    password VARCHAR(255) NOT NULL,
-    PRIMARY KEY(sid));
-
 insert into Students (sid, username, password) values (1, 'mstendell0', 'IkMmDP3u3l');
 insert into Students (sid, username, password) values (2, 'ggraeber1', 'M1NGI4im');
 insert into Students (sid, username, password) values (3, 'lovanesian2', 'nfs1e6NtJxu');

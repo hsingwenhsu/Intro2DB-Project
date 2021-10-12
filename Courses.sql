@@ -1,12 +1,3 @@
-CREATE TABLE Courses(
-    cnum VARCHAR(255),
-    did VARCHAR(255),
-    name VARCHAR(255) NOT NULL,
-    description VARCHAR(1024),
-    credits FLOAT CHECK(credits > 0),
-    PRIMARY KEY(did, cnum),
-    FOREIGN KEY (did) REFERENCES Departments(did));
-
 insert into Courses (cnum, did, name, credits)
 values ('E6156', 'COMS', 'CLOUD COMPUTING', 3);
 
